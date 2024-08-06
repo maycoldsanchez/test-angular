@@ -35,11 +35,11 @@ module.exports = function (config) {
       },
     },
     reporters: ["mocha"],
-    browsers: ["Chrome", "ChromeHeadless"],
+    browsers: ["Chrome", "ChromeHeadlessNoSandbox"],
     customLaunchers: {
-      ChromeHeadLessCI: {
-        base: "ChromeHeadLess",
-        flags: ["--no-sandbox"],
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox", "--disable-gpu", "--disable-web-security"],
       },
     },
     restartOnFileChange: true,
